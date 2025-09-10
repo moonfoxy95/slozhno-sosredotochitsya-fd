@@ -2,4 +2,362 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: "IBM Plex mono";
+  padding: 0px 10px;
+}
+
+/* HEADER */
+
+.header {
+  block-size: 100dvh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  margin-block-end: 40px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  margin-block-start: 10px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  color: var(--section-heading-color);
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  line-height: 1;
+  inline-size: 70px;
+  block-size: 26px;
+  cursor: pointer;
+  /*
+  padding-top: 5px;
+  padding-bottom: 1.5px;
+  */
+}
+
+.header__title {
+  color: var(--h1-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  text-shadow: 4px 4px var(--accent-color);
+}
+
+.header__description {
+  align-self: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px; /* pixel-perfect */
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  position: absolute;
+  border-top: 1px solid var(--section-heading-color);
+  border-right: 1px solid var(--section-heading-color);
+  top: 10px;
+  right: 0px;
+}
+
+.decorated-zone::after {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  position: absolute;
+  border-left: 1px solid var(--section-heading-color);
+  border-bottom: 1px solid var(--section-heading-color);
+  bottom: 10px;
+  left: 0px;
+}
+
+.rec {
+  position: absolute;
+  top: 11px;
+  right: 30px;
+  color: var(--accent-color);
+}
+
+.rec::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 4px;
+  background-color: var(--accent-color);
+  top: 8px;
+  right: -20px;
+}
+
+/* MAIN */
+
+.main {
+  display: grid;
+  gap: 50px;
+  margin-block-end: 40px;
+}
+
+.section,
+.concentration-article_wrapper {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.section__title,
+.section__subtitle {
+  color: var(--section-heading-color);
+  font-size: 1em;
+}
+
+.article__title {
+  font-size: 18px;
+  margin-block-end: 10px;
+}
+
+.article__text {
+  color: var(--text-color);
+}
+
+.text__link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.title__font-weight_normal {
+  font-weight: normal;
+}
+
+.section__pictures {
+  gap: 10px;
+}
+
+.picture {
+  width: 100%;
+}
+
+/* FOOTER */
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  block-size: 100dvh;
+  min-block-size: 668px;
+}
+
+.footer__title {
+  color: var(--h1-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  text-shadow: 4px 4px var(--accent-color);
+}
+
+/* DECOR */
+
+.title-decor {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+}
+
+/* СОСТОЯНИЯ */
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--section-heading-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--section-heading-color);
+}
+
+.text__link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.text__link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+/* MEDIA */
+
+@media (width >= 768px) {
+  .page {
+    padding: 0 20px;
+  }
+
+  .header,
+  .footer {
+    min-block-size: 1024px;
+  }
+
+  .header {
+    margin-block-end: 60px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+  }
+
+  .decorated-zone::before {
+    bottom: 20px;
+  }
+
+  .rec {
+    top: 20px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 10px;
+  }
+
+  .header__title,
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__title {
+    margin-left: -20px;
+  }
+
+  .header__description {
+    inline-size: 50%;
+    justify-self: end;
+    margin-block-end: 20px;
+  }
+
+  .main {
+    gap: 80px;
+    margin-block-end: 60px;
+  }
+
+  .section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section__title {
+    grid-column: 1;
+  }
+
+  .article {
+    grid-column: 2;
+  }
+
+  .concentration-article_wrapper {
+    grid-column: 1 / -1;
+    column-gap: unset;
+  }
+
+  .advices-title {
+    grid-row: span 2;
+  }
+
+  .section__pictures {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+  }
+
+  .pictures-title {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .picture {
+    height: 100%;
+    object-fit: cover;
+    background-color: blueviolet;
+  }
+
+  .picture__sunset {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  .picture__ice-cream {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+  }
+
+  .picture__ice-cream {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+  }
+
+  .picture__tape {
+    grid-column: 1;
+    grid-row: 3 / span 2;
+  }
+
+  .picture__street {
+    grid-column: 2 / span 2;
+    grid-row: 4;
+  }
+}
+
+@media (width >= 1024px) {
+  .header,
+  .footer {
+    min-block-size: 768px;
+  }
+
+  .header {
+    padding-top: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block-start: unset;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .header__title {
+    margin-block-end: 15px;
+  }
+
+  .header__description {
+    margin-block-end: 40px;
+  }
+
+  .section__concentration {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .concentration-article_wrapper {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+  .concentration-article {
+    grid-column: unset;
+  }
 }

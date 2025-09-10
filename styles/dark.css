@@ -9,4 +9,16 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-image: url("../images/cover-image-dark.png");
+  --bg-color: darkblue;
+  --h1-color: rgba(219, 0, 255, 1);
+  --main-color: rgba(0, 0, 40, 1);
+  --accent-color: rgba(255, 0, 112, 1);
+  --section-heading-color: rgba(255, 0, 112, 1);
+  --text-color: rgba(241, 178, 206, 1);
+  --button-hover-color: rgba(255, 0, 112, 0.4);
+}
+
+.theme-dark .rec::after {
+  display: block;
 }
