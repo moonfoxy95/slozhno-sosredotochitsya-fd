@@ -12,7 +12,7 @@
 
   --bg-image: url("../images/cover-image-light.png");
   --bg-color: pink;
-  --h1-color: rgba(255, 141, 203, 1);
+  --h1-color: rgba(255, 194, 230, 1);
   --main-color: rgba(53, 52, 48, 1);
   --accent-color: rgba(255, 141, 203, 1);
   --section-heading-color: rgba(53, 52, 48, 1);
@@ -36,7 +36,14 @@
     --button-hover-color: rgba(50, 49, 45, 0.4);
   }
 
+  
   .rec {
     display: none;
   }
+
+  .theme-dark .rec {
+    display: inline;
+  }
+
+    
 }

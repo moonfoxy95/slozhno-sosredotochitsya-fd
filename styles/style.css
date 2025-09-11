@@ -8,7 +8,7 @@
   background-position: bottom;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-family: "IBM Plex mono";
+  font-family: "IBM Plex mono", sans-serif;
   padding: 0px 10px;
 }
 
@@ -36,7 +36,7 @@
 .header__theme-menu-button {
   color: var(--section-heading-color);
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   text-transform: lowercase;
   line-height: 1;
   inline-size: 70px;
@@ -128,9 +128,14 @@
   font-size: 1em;
 }
 
+.article {
+  display: grid;
+  block-size: min-content;
+  gap: 10px;
+}
+
 .article__title {
   font-size: 18px;
-  margin-block-end: 10px;
 }
 
 .article__text {
@@ -344,6 +349,11 @@
 
   .header__description {
     margin-block-end: 40px;
+  }
+
+  .section__difficulties,
+  .section__advices {
+    column-gap: 10px;
   }
 
   .section__concentration {
